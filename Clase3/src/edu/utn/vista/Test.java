@@ -1,5 +1,8 @@
 package edu.utn.vista;
 
+import java.util.Arrays;
+import java.util.function.Function;
+
 public class Test {
 
 	// punto de incio
@@ -12,19 +15,20 @@ public class Test {
 
 		// invocamos al IMC donde le pasamos la altura y el peso
 
-		double resultado = imc(99.0, 1.95); // una funcion siempre retorna un valor
+//		double resultado = imc(99.0, 1.95); // una funcion siempre retorna un valor
 
-		if (resultado < 18) {
-			System.out.println("Flaque escopeta");
-		} else if (resultado >= 18 && resultado <= 25) {
-			System.out.println("Hace ejercicio igual pero vas bien");
-		} else if (resultado > 25 && resultado < 29) {
-			System.out.println("afloja los postres");
-		} else {
-			System.out.println("gorde pedorre");
-		}
+		
+//		if (resultado < 18) {
+//			System.out.println("Flaque escopeta");
+//		} else if (resultado >= 18 && resultado <= 25) {
+//			System.out.println("Hace ejercicio igual pero vas bien");
+//		} else if (resultado > 25 && resultado < 29) {
+//			System.out.println("afloja los postres");
+//		} else {
+//			System.out.println("gorde pedorre");
+//		}
 
-		System.out.println(resultado);
+//		System.out.println(resultado);
 		
 		
 		System.out.println("la suma de 2 + 2 = " + sumoDosNumeros(2, 2));
@@ -32,6 +36,12 @@ public class Test {
 		System.out.println(sumoDosNumeros(sumoDosNumeros(1, sumoDosNumeros(19, 32)), 2));
 		
 		muestroValores("Ned", "Flanders", 15);
+		
+		String a = "pedo";
+		String b="caa";
+		
+		Arrays.asList(a,b).forEach(System.out::print);
+		
 		
 	}
 
@@ -41,10 +51,10 @@ public class Test {
 	}
 
 	// Funcion donde chequeamos el IMC o indice de masa coroporal
-	public static double imc(double peso, double altura) {
+	public static String imc(Double altura) {
 
-		double resultado = peso / (altura * altura);
-		return resultado;
+		double resultado = 1.90 / (altura * altura);
+		return "Pedo";
 	}
 
 	//funcion de tipo entero que retora la suma de los dos parametros de entrada
@@ -100,4 +110,16 @@ public class Test {
 	 * 
 	 * 
 	 */
+	
+	public void sarasa() {
+		Function<Double, String> f = Test::imc;
+		 System.out.println(f.apply(8.0));
+		
+		ccc(Test::imc);
+	}
+	
+	public void ccc(String aasd) {
+		System.out.println(aasd);
+	}
+
 }
