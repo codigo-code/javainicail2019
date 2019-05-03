@@ -1,0 +1,1 @@
+La variable vehiculo no esta incializadaLa variable vehiculo no esta incializada
