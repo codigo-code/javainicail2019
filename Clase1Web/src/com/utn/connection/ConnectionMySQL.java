@@ -1,4 +1,4 @@
-package com.utn.dao;
+package com.utn.connection;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -42,6 +42,25 @@ public class ConnectionMySQL {
 			System.out.println(e.getMessage());
 			System.out.println("Rompio");
 		}
+	}
+	
+	public Auto getAutoById(int id) {
+		try {
+			Statement st =(Statement) getConnection().createStatement();
+			String query = "select * from auto where id="+id;
+			
+			ResultSet rs = st.executeQuery(query);
+			Auto a= new Auto();
+			while(rs.next()) {
+				a.setMarca(rs.getString("marca"));
+				a.setModelo(rs.getString("modelo"));
+				a.setColor(rs.getString("color"));
+			}
+			return a;
+		} catch (Exception e) {
+			return null;
+		}
+		
 	}
 
 	public boolean insertAuto(String marca, String modelo, String color) {
