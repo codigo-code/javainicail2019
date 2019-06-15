@@ -1,0 +1,18 @@
+<table border="1px">
+  <tr>
+    <td>id</td>
+    <td>descripcion</td>
+    <td>cantidad</td>
+    <td>Seleccionar</td>
+  </tr>
+  <tr *ngFor="let item of listProductos">
+    <td>{{item.id}}</td>
+    <td>{{item.descripcion}}</td>
+    <td>{{item.cantidad}}</td>
+    <td><button (click)="verProducto(item.id)">Ver producto</button></td>
+  </tr>
+</table>
+
+
+<br>
+<app-producto [item]="item"></app-producto>

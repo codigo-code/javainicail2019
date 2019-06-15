@@ -1,0 +1,9 @@
+<form>
+  <input type="text" [(ngModel)]="vehiculo" name="vehiculo" placeholder="ingrese el vehiculo" />
+  <button (click)="buscar()">buscar</button>
+</form>
+
+
+<div class="descripcion">
+  <app-view (verVehiculo)="verVehiculo($event)"></app-view>
+</div>
